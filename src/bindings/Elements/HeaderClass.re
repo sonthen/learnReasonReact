@@ -3,7 +3,9 @@ external className: ReasonReact.reactClass = "Header";
 
 let make =
     (
-      ~backgroundColor: option(string)=?,children
+      ~backgroundColor: option(string)=?,
+      ~centerComponent: option(ReasonReact.reactElement)=?,
+      children
     ) =>
   ReasonReact.wrapJsForReason(
     ~reactClass=className,
@@ -11,6 +13,8 @@ let make =
       Js.Nullable.(
         {
           "backgroundColor": fromOption(backgroundColor),
+          "centerComponent": fromOption(centerComponent),
+
          
         }
       ),

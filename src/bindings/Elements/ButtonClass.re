@@ -1,25 +1,3 @@
-/*
-    TODO: (Gemx) Props for button.
-    buttonStyle
-    clear
-    containerStyle
-    disabled
-    disabledStyle
-    disabledTitleStyle
-    icon
-    iconContainerStyle
-    iconRight
-    linearGradientProps
-    loading
-    loadingProps
-    loadingStyle
-    onPress
-    title
-    titleProps
-    titleStyle
-    TouchableComponent
-    ViewComponent
- */
 [@bs.module "react-native-elements"]
 external className : ReasonReact.reactClass = "Button";
 
