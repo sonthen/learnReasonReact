@@ -1,5 +1,3 @@
-open BsReactNative;
-
 /*
     TODO: (Gemx) Props for button.
     buttonStyle
@@ -23,7 +21,7 @@ open BsReactNative;
     ViewComponent
  */
 [@bs.module "react-native-elements"]
-external componentClass : ReasonReact.reactClass = "Button";
+external className : ReasonReact.reactClass = "Button";
 
 let make =
     (
@@ -33,24 +31,39 @@ let make =
       ~disabled: option(bool)=?,
       ~disabledStyle: option(BsReactNative.Style.t)=?,
       ~disabledTitleStyle: option(BsReactNative.Style.t)=?,
-      ~title: string,
+      ~icon: option(ReasonReact.reactElement)=?,
+      ~iconContainerStyle: option(BsReactNative.Style.t)=?,
+      ~iconRight: option(bool)=?,
       ~loading: option(bool)=?,
-      ~onPress: option(_ => _)=?,
       ~loadingProps: option(BsReactNative.Style.t)=?,
+      ~loadingStyle: option(BsReactNative.Style.t)=?,
+      ~onPress: option(_ => _)=?,
+      ~title: option(string)=?,
+      ~titleProps: option(BsReactNative.Style.t)=?,
+      ~titleStyle: option(BsReactNative.Style.t)=?,
       children,
     ) =>
   ReasonReact.wrapJsForReason(
-    ~reactClass=componentClass,
+    ~reactClass=className,
     ~props=
       Js.Nullable.(
         {
-          "title": title,
           "buttonStyle": fromOption(buttonStyle),
           "clear": fromOption(clear),
+          "containerStyle": fromOption(containerStyle),
+          "disabled": fromOption(disabled),
+          "disabledStyle": fromOption(disabledStyle),
+          "disabledTitleStyle": fromOption(disabledTitleStyle),
+          "icon": fromOption(icon),
+          "iconContainerStyle": fromOption(iconContainerStyle),
+          "iconRight": fromOption(iconRight),
           "loading": fromOption(loading),
+          "loadingProps": fromOption(loadingProps),
+          "loadingStyle": fromOption(loadingStyle),
           "onPress": fromOption(onPress),
-          "containerStyle": containerStyle,
-          "loadingProps": loadingProps,
+          "title": fromOption(title),
+          "titleProps": fromOption(titleProps),
+          "titleStyle": fromOption(titleStyle)
         }
       ),
     children,
