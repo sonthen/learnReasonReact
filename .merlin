@@ -1,0 +1,30 @@
+####{BSB GENERATED: NO EDIT
+FLG -ppx '/Users/Me/projects/catchupproto/node_modules/bs-platform/lib/reactjs_jsx_ppx_2.exe'
+FLG -ppx /Users/Me/projects/catchupproto/node_modules/bs-platform/lib/bsppx.exe
+S /Users/Me/projects/catchupproto/node_modules/bs-platform/lib/ocaml
+B /Users/Me/projects/catchupproto/node_modules/bs-platform/lib/ocaml
+FLG -nostdlib -no-alias-deps -color always
+FLG -w -30-40+6+7+27+32..39+44+45+101
+S /Users/Me/projects/catchupproto/node_modules/bs-react-native/lib/ocaml
+B /Users/Me/projects/catchupproto/node_modules/bs-react-native/lib/ocaml
+S /Users/Me/projects/catchupproto/node_modules/reason-react/lib/ocaml
+B /Users/Me/projects/catchupproto/node_modules/reason-react/lib/ocaml
+S /Users/Me/projects/catchupproto/node_modules/@glennsl/bs-jest/lib/ocaml
+B /Users/Me/projects/catchupproto/node_modules/@glennsl/bs-jest/lib/ocaml
+S src
+B lib/bs/src
+S src/scenes
+B lib/bs/src/scenes
+S src/scenes/Login
+B lib/bs/src/scenes/Login
+S src/general
+B lib/bs/src/general
+S src/general/styles
+B lib/bs/src/general/styles
+S src/bindings
+B lib/bs/src/bindings
+S src/bindings/Elements
+B lib/bs/src/bindings/Elements
+S src/__tests__
+B lib/bs/src/__tests__
+####BSB GENERATED: NO EDIT}
