@@ -1,5 +1,7 @@
 open BsReactNative;
 
+open UtilsCaml;
+
 let component = ReasonReact.statelessComponent("Login");
 
 type state = {
@@ -28,6 +30,8 @@ let make = _children => {
        reducer: (action, state) => {.}, */
     render: _self =>
       <View>
+        <Text> (UtilsCaml.times(4, 5) |> string_of_int |> Utils.str) </Text>
+        <Elements.Badge value=(Num(65)) />
         <Elements.Button
           onPress=(_e => handleClick(_e))
           buttonStyle=Styles.buttonStyle
