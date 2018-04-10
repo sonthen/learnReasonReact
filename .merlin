@@ -11,6 +11,8 @@ S /Users/Me/projects/catchupproto/node_modules/reason-react/lib/ocaml
 B /Users/Me/projects/catchupproto/node_modules/reason-react/lib/ocaml
 S /Users/Me/projects/catchupproto/node_modules/@glennsl/bs-jest/lib/ocaml
 B /Users/Me/projects/catchupproto/node_modules/@glennsl/bs-jest/lib/ocaml
+S /Users/Me/projects/catchupproto/node_modules/bs-fetch/lib/ocaml
+B /Users/Me/projects/catchupproto/node_modules/bs-fetch/lib/ocaml
 S src
 B lib/bs/src
 S src/scenes

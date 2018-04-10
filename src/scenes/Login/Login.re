@@ -7,6 +7,19 @@ type state = {
   passwordInput: string,
 };
 
+module Styles = {
+  open Style;
+  let buttonStyle =
+    style([
+      backgroundColor @@ "rgba(92, 99,216, 1)",
+      width @@ Pt(300 |> float),
+      height @@ Pt(45.),
+      borderColor @@ "transparent",
+      borderWidth @@ 0.,
+      borderRadius @@ 5.,
+    ]);
+};
+
 let make = _children => {
   let handleClick = _e => Js.log("clicked");
   {
@@ -15,19 +28,9 @@ let make = _children => {
        reducer: (action, state) => {.}, */
     render: _self =>
       <View>
-        <Text> (ReasonReact.stringToElement("hi")) </Text>
         <Elements.Button
           onPress=(_e => handleClick(_e))
-          buttonStyle=Style.(
-                        style([
-                          backgroundColor @@ "rgba(92, 99,216, 1)",
-                          width @@ Pt(300 |> float),
-                          height @@ Pt(45.),
-                          borderColor @@ "transparent",
-                          borderWidth @@ 0.,
-                          borderRadius @@ 5.,
-                        ])
-                      )
+          buttonStyle=Styles.buttonStyle
           title="Login"
         />
       </View>,

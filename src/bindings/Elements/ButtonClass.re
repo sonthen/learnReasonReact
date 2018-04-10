@@ -15,7 +15,7 @@ let make =
       ~loading: option(bool)=?,
       ~loadingProps: option(BsReactNative.Style.t)=?,
       ~loadingStyle: option(BsReactNative.Style.t)=?,
-      ~onPress: option(_ => _)=?,
+      ~onPress: option(unit => unit)=?,
       ~title: option(string)=?,
       ~titleProps: option(BsReactNative.Style.t)=?,
       ~titleStyle: option(BsReactNative.Style.t)=?,
@@ -41,7 +41,7 @@ let make =
           "onPress": fromOption(onPress),
           "title": fromOption(title),
           "titleProps": fromOption(titleProps),
-          "titleStyle": fromOption(titleStyle)
+          "titleStyle": fromOption(titleStyle),
         }
       ),
     children,
