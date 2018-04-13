@@ -5,7 +5,7 @@ module Styles = {
   let showCaseContainer = style([flex @@ 1., justifyContent @@ Center]);
   let buttonStyle =
     style([
-      backgroundColor @@ "rgba(92, 99,216, 1)",
+      backgroundColor @@ "#DB4D3F",
       width @@ Pt(300 |> float),
       height @@ Pt(45.),
       borderColor @@ "transparent",

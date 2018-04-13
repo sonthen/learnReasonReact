@@ -76,7 +76,7 @@ module NavigationOptions = {
     "headerTransparent": Js.Nullable.t(bool),
     "headerBackground": Js.Nullable.t(string),
     "gesturesEnabled": Js.Nullable.t(bool),
-    "gesturreResponseDitance": Js.Nullable.t(gestureResponseDistance),
+    "gestureResponseDistance": Js.Nullable.t(gestureResponseDistance),
     "gestureDirection": Js.Nullable.t(GestureDirection.t),
   };
   let create =
@@ -99,7 +99,7 @@ module NavigationOptions = {
         ~headerTransparent: option(bool)=?,
         ~headerBackground: option(string)=?,
         ~gesturesEnabled: option(bool)=?,
-        ~gesturreResponseDitance: option(gestureResponseDistance)=?,
+        ~gestureResponseDistance: option(gestureResponseDistance)=?,
         ~gestureDirection: option(GestureDirection.t)=?,
         (),
       )
@@ -125,7 +125,7 @@ module NavigationOptions = {
         "headerTransparent": fromOption(headerTransparent),
         "headerBackground": fromOption(headerBackground),
         "gesturesEnabled": fromOption(gesturesEnabled),
-        "gesturreResponseDitance": fromOption(gesturreResponseDitance),
+        "gestureResponseDistance": fromOption(gestureResponseDistance),
         "gestureDirection": fromOption(gestureDirection),
       }
     );
