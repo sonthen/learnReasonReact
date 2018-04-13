@@ -127,6 +127,40 @@ module Badge = {
     );
 };
 
-
-/* TODO:  Card Here */
-
+module Card = {
+  [@bs.module "react-native-elements"]
+  external className : ReasonReact.reactClass = "Card";
+  type title =
+    | StrComponent(string)
+    | FullComponent(ReasonReact.reactElement);
+  let titleChecker = v =>
+    switch (v) {
+    | StrComponent(str) =>
+      BsReactNative.(<Text> (str |> ReasonReact.stringToElement) </Text>)
+    | FullComponent(component) => component
+    };
+  let unwrwapTitle = opt =>
+    switch (opt) {
+    | None => ReasonReact.nullElement
+    | Some(v) => titleChecker(v)
+    };
+  let make =
+      (
+        ~containerStyle: option(BsReactNative.Style.t)=?,
+        ~dividerStyle: option(BsReactNative.Style.t)=?,
+        ~title: option(title)=?,
+        children,
+      ) =>
+    ReasonReact.wrapJsForReason(
+      ~reactClass=className,
+      ~props=
+        Js.Nullable.(
+          {
+            "containerStyle": fromOption(containerStyle),
+            "dividerStyle": fromOption(dividerStyle),
+            "title": unwrwapTitle(title),
+          }
+        ),
+      children,
+    );
+};
