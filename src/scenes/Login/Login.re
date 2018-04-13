@@ -1,7 +1,5 @@
 open BsReactNative;
 
-open UtilsCaml;
-
 let component = ReasonReact.statelessComponent("Login");
 
 type state = {
