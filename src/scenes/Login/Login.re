@@ -9,6 +9,76 @@ type state = {
   passwordInput: string,
 };
 
+module Cards = {
+  let component = ReasonReact.statelessComponent("Cards");
+  let make = _children => {
+    ...component,
+    render: _self =>
+      <ScrollView horizontal=true>
+        <Elements.Card
+          title="hi this is it"
+          image=(
+            Image.URI(
+              Image.imageURISource(
+                ~uri=
+                  "https://i.pinimg.com/736x/a6/a8/1c/a6a81c805d682e3fd2236aa129174fa7--cute-stuff-random-stuff.jpg",
+                (),
+              ),
+            )
+          )
+        />
+        <Elements.Card
+          title="hi this is it"
+          image=(
+            Image.URI(
+              Image.imageURISource(
+                ~uri=
+                  "https://i.pinimg.com/736x/a6/a8/1c/a6a81c805d682e3fd2236aa129174fa7--cute-stuff-random-stuff.jpg",
+                (),
+              ),
+            )
+          )
+        />
+        <Elements.Card
+          title="hi this is it"
+          image=(
+            Image.URI(
+              Image.imageURISource(
+                ~uri=
+                  "https://i.pinimg.com/736x/a6/a8/1c/a6a81c805d682e3fd2236aa129174fa7--cute-stuff-random-stuff.jpg",
+                (),
+              ),
+            )
+          )
+        />
+        <Elements.Card
+          title="hi this is it"
+          image=(
+            Image.URI(
+              Image.imageURISource(
+                ~uri=
+                  "https://i.pinimg.com/736x/a6/a8/1c/a6a81c805d682e3fd2236aa129174fa7--cute-stuff-random-stuff.jpg",
+                (),
+              ),
+            )
+          )
+        />
+        <Elements.Card
+          title="hi this is it"
+          image=(
+            Image.URI(
+              Image.imageURISource(
+                ~uri=
+                  "https://i.pinimg.com/736x/a6/a8/1c/a6a81c805d682e3fd2236aa129174fa7--cute-stuff-random-stuff.jpg",
+                (),
+              ),
+            )
+          )
+        />
+      </ScrollView>,
+  };
+};
+
 module Styles = {
   open Style;
   let buttonStyle =
@@ -30,75 +100,16 @@ let make = _children => {
        reducer: (action, state) => {.}, */
     render: _self =>
       <View style=GlobalStyles.container>
-        <ScrollView horizontal=true>
-          <Elements.Card
-            title="hi this is it"
-            image=(
-              Image.URI(
-                Image.imageURISource(
-                  ~uri=
-                    "https://i.pinimg.com/736x/a6/a8/1c/a6a81c805d682e3fd2236aa129174fa7--cute-stuff-random-stuff.jpg",
-                  (),
-                ),
-              )
-            )
+        <View style=Style.(style([flex @@ 2.]))> <Cards /> </View>
+        <View style=Style.(style([flex @@ 8.]))>
+          <Text> (UtilsCaml.times(4, 5) |> string_of_int |> Utils.str) </Text>
+          <Elements.Badge value=(Num(65)) />
+          <Elements.Button
+            onPress=(_e => handleClick(_e))
+            buttonStyle=Styles.buttonStyle
+            title="Login"
           />
-          <Elements.Card
-            title="hi this is it"
-            image=(
-              Image.URI(
-                Image.imageURISource(
-                  ~uri=
-                    "https://i.pinimg.com/736x/a6/a8/1c/a6a81c805d682e3fd2236aa129174fa7--cute-stuff-random-stuff.jpg",
-                  (),
-                ),
-              )
-            )
-          />
-          <Elements.Card
-            title="hi this is it"
-            image=(
-              Image.URI(
-                Image.imageURISource(
-                  ~uri=
-                    "https://i.pinimg.com/736x/a6/a8/1c/a6a81c805d682e3fd2236aa129174fa7--cute-stuff-random-stuff.jpg",
-                  (),
-                ),
-              )
-            )
-          />
-          <Elements.Card
-            title="hi this is it"
-            image=(
-              Image.URI(
-                Image.imageURISource(
-                  ~uri=
-                    "https://i.pinimg.com/736x/a6/a8/1c/a6a81c805d682e3fd2236aa129174fa7--cute-stuff-random-stuff.jpg",
-                  (),
-                ),
-              )
-            )
-          />
-          <Elements.Card
-            title="hi this is it"
-            image=(
-              Image.URI(
-                Image.imageURISource(
-                  ~uri=
-                    "https://i.pinimg.com/736x/a6/a8/1c/a6a81c805d682e3fd2236aa129174fa7--cute-stuff-random-stuff.jpg",
-                  (),
-                ),
-              )
-            )
-          />
-        </ScrollView>
-        <Text> (UtilsCaml.times(4, 5) |> string_of_int |> Utils.str) </Text>
-        <Elements.Badge value=(Num(65)) />
-        <Elements.Button
-          onPress=(_e => handleClick(_e))
-          buttonStyle=Styles.buttonStyle
-          title="Login"
-        />
+        </View>
       </View>,
   };
 };
