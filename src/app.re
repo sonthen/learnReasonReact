@@ -6,10 +6,13 @@ module Styles = {
   let container = flatten([|flex1, style([backgroundColor @@ "#2f2f2f"])|]);
 };
 
-module Nav = {};
+module Nav = {
+  let component = ReasonReact.statelessComponent("Nav");
+  let make = _children => {
+    ...component,
+    render: _children =>
+      <View> <Text> ("nav" |> ReasonReact.stringToElement) </Text> </View>,
+  };
+};
 
-let app = () =>
-  <View style=Styles.container>
-    <StatusBar barStyle=`lightContent />
-    <ShowCaseMenu />
-  </View>;
+let app = () => <ShowCaseMenu />;
