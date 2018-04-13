@@ -25,8 +25,26 @@ module Cards = {
                 (),
               ),
             )
-          )
-        />
+          )>
+          <Text style=Style.(style([marginBottom @@ Pt(0.)]))>
+            (
+              "The idea with React Native Elements is more about component structure than actual design. "
+              |> ReasonReact.stringToElement
+            )
+          </Text>
+          <Elements.Button
+            buttonStyle=Style.(
+                          style([
+                            backgroundColor @@ "#03A9F4",
+                            borderRadius @@ 0.,
+                            marginLeft @@ Pt(0.),
+                            marginRight @@ Pt(0.),
+                            marginBottom @@ Pt(0.),
+                          ])
+                        )
+            title="View Now"
+          />
+        </Elements.Card>
         <Elements.Card
           title="hi this is it"
           image=(

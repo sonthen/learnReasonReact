@@ -14,10 +14,10 @@ let app = () =>
       style=Style.(
               style([
                 flex @@ 1.,
-                justifyContent @@ Center,
-                alignItems @@ Center,
+                /* justifyContent @@ Center,
+                   alignItems @@ Center, */
               ])
             )>
-      <Login />
+      <ShowCase />
     </View>
   </View>;
