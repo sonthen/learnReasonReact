@@ -26,6 +26,7 @@ let make = _children => {
                 style([
                   backgroundColor @@ "#2f2f2f",
                   justifyContent @@ SpaceAround,
+                  marginVertical @@ Pt(290.),
                 ]),
               |])
             )>
