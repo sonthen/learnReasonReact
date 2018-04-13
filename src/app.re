@@ -11,5 +11,5 @@ module Nav = {};
 let app = () =>
   <View style=Styles.container>
     <StatusBar barStyle=`lightContent />
-    <ShowCase />
+    <ShowCaseMenu />
   </View>;
