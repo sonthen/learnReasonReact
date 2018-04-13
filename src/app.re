@@ -18,7 +18,6 @@ let app = () =>
                 alignItems @@ Center,
               ])
             )>
-      <Text> ("Counter App" |> ReasonReact.stringToElement) </Text>
       <Login />
     </View>
   </View>;

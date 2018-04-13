@@ -1,4 +1,5 @@
 open BsReactNative;
+
 open Style;
 
 let flex1 = style([flex(1.)]);
@@ -10,3 +11,9 @@ let columnFlexed = style([flexDirection(Column)]);
 let centerAligned = style([alignItems(Center)]);
 
 let centerJustified = style([justifyContent(Center)]);
+
+let container =
+  flatten([|
+    flex1,
+    style([justifyContent @@ Center, alignItems @@ Center]),
+  |]);

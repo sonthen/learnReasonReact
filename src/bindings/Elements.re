@@ -106,6 +106,7 @@ module Input = {
 module Badge = {
   [@bs.module "react-native-elements"]
   external className : ReasonReact.reactClass = "Badge";
+  /* type of the value could either be string or integer */
   type value =
     | String(string)
     | Num(int);
@@ -119,6 +120,7 @@ module Badge = {
     | None => ""
     | Some(v) => valueChecker(v)
     };
+  /* end checks for value ! */
   let make = (~value: option(value)=?, children) =>
     ReasonReact.wrapJsForReason(
       ~reactClass=className,
@@ -130,6 +132,7 @@ module Badge = {
 module Card = {
   [@bs.module "react-native-elements"]
   external className : ReasonReact.reactClass = "Card";
+  /* type for title could either be a string or a react component */
   type title =
     | String(string)
     | Component(ReasonReact.reactElement);
@@ -144,11 +147,13 @@ module Card = {
     | None => ReasonReact.nullElement
     | Some(v) => titleChecker(v)
     };
+  /* end the checks for title ! */
   let make =
       (
         ~containerStyle: option(BsReactNative.Style.t)=?,
         ~dividerStyle: option(BsReactNative.Style.t)=?,
-        ~title: option(title)=?,
+        ~title: option(string)=?,
+        ~image: option(BsReactNative.Image.imageSource)=?,
         children,
       ) =>
     ReasonReact.wrapJsForReason(
@@ -158,7 +163,8 @@ module Card = {
           {
             "containerStyle": fromOption(containerStyle),
             "dividerStyle": fromOption(dividerStyle),
-            "title": unwrwapTitle(title),
+            "title": fromOption(title),
+            "image": fromOption(image),
           }
         ),
       children,
