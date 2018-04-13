@@ -131,13 +131,13 @@ module Card = {
   [@bs.module "react-native-elements"]
   external className : ReasonReact.reactClass = "Card";
   type title =
-    | StrComponent(string)
-    | FullComponent(ReasonReact.reactElement);
+    | String(string)
+    | Component(ReasonReact.reactElement);
   let titleChecker = v =>
     switch (v) {
-    | StrComponent(str) =>
+    | String(str) =>
       BsReactNative.(<Text> (str |> ReasonReact.stringToElement) </Text>)
-    | FullComponent(component) => component
+    | Component(component) => component
     };
   let unwrwapTitle = opt =>
     switch (opt) {
