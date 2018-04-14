@@ -1,4 +1,5 @@
 module Button = {
+  type p;
   [@bs.module "react-native-elements"]
   external className : ReasonReact.reactClass = "Button";
   let make =
@@ -15,7 +16,7 @@ module Button = {
         ~loading: option(bool)=?,
         ~loadingProps: option(BsReactNative.Style.t)=?,
         ~loadingStyle: option(BsReactNative.Style.t)=?,
-        ~onPress: option(unit => unit)=?,
+        ~onPress: option(p => unit)=?,
         ~title: option(string)=?,
         ~titleProps: option(BsReactNative.Style.t)=?,
         ~titleStyle: option(BsReactNative.Style.t)=?,
@@ -106,6 +107,7 @@ module Input = {
 module Badge = {
   [@bs.module "react-native-elements"]
   external className : ReasonReact.reactClass = "Badge";
+  /* type stringOrInt = [| `String(string) | Number(int) ]; */
   /* type of the value could either be string or integer */
   type value =
     | String(string)
