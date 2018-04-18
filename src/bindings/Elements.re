@@ -172,3 +172,14 @@ module Card = {
       children,
     );
 };
+
+module CheckBox = {
+  [@bs.module "react-native-elements"]
+  external className : ReasonReact.reactClass = "CheckBox";
+  let make = (~title: option(string)=?, children) =>
+    ReasonReact.wrapJsForReason(
+      ~reactClass=className,
+      ~props=Js.Nullable.({"title": fromOption(title)}),
+      children,
+    );
+};

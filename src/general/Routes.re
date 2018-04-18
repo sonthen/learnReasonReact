@@ -1,5 +1,7 @@
-module ShowCase = {
+module Showcase = {
   let card = "Card";
+  let button = "Button";
+  let homepage = "HomePage";
 };
 
-let showCaseMenu = "ShowCaseMenu";
+let showcaseMenu = "ShowcaseMenu";
