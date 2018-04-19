@@ -1,7 +1,8 @@
 module Showcase = {
-  let card = "Card";
+  let courseCard = "Course Card";
+  let quizCircle = "Quiz Circle";
   let button = "Button";
-  let homepage = "HomePage";
+  let homepage = "Home Page";
 };
 
-let showcaseMenu = "ShowcaseMenu";
+let showcaseMenu = "Showcase Menu";

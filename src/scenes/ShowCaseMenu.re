@@ -45,7 +45,8 @@ let component = ReasonReact.statelessComponent("Showcase");
      )
    />; */
 let showcaseItem = [|
-  {key: Routes.Showcase.card},
+  {key: Routes.Showcase.courseCard},
+  {key: Routes.Showcase.quizCircle},
   {key: Routes.Showcase.button},
   {key: Routes.Showcase.homepage},
 |];
@@ -54,9 +55,6 @@ let make = (~navigation: ReactNavigation.Navigation.t, _children) => {
   ...component,
   render: _self =>
     <View style=Styles.showcaseContainer>
-      <View style=Styles.showcaseHeader>
-        <Text value="Showcase" style=Styles.whiteText />
-      </View>
       <View style=Styles.showcaseContent>
         <FlatList
           data=showcaseItem

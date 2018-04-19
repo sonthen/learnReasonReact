@@ -1,3 +1,8 @@
+%bs.raw
+{|
+  console.disableYellowBox = true;
+  |};
+
 open BsReactNative;
 
 module Styles = {
@@ -22,14 +27,34 @@ module Nav = {
                   ~screen=
                     props => <ShowcaseMenu navigation=props##navigation />,
                   ~path="/",
+                  ~navigationOptions=
+                    NavigationOptions.create(~title=Routes.showcaseMenu, ()),
                   (),
                 ),
               ),
               (
-                Routes.Showcase.card,
+                Routes.Showcase.courseCard,
                 RouteConfig.route(
                   ~screen=_props => <CourseCard />,
-                  ~path="/card",
+                  ~path="/courseCard",
+                  ~navigationOptions=
+                    NavigationOptions.create(
+                      ~title=Routes.Showcase.courseCard,
+                      (),
+                    ),
+                  (),
+                ),
+              ),
+              (
+                Routes.Showcase.quizCircle,
+                RouteConfig.route(
+                  ~screen=_props => <CourseCard />,
+                  ~path="/quizCircle",
+                  ~navigationOptions=
+                    NavigationOptions.create(
+                      ~title=Routes.Showcase.quizCircle,
+                      (),
+                    ),
                   (),
                 ),
               ),
@@ -62,7 +87,7 @@ module Nav = {
           config=(
             StackNavigatorConfig.create(
               ~initialRouteName=Routes.showcaseMenu,
-              ~headerMode=HeaderMode.None,
+              ~headerMode=HeaderMode.Screen,
               (),
             )
           )
@@ -74,6 +99,5 @@ module Nav = {
 let app = () =>
   <View style=Styles.container>
     <StatusBar barStyle=`darkContent />
-    <View style=Styles.statusBar />
     <Nav />
   </View>;

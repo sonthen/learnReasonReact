@@ -183,3 +183,73 @@ module CheckBox = {
       children,
     );
 };
+
+module Icon = {
+  type typeOptions =
+    | MaterialCommunity
+    | Zocial
+    | FontAwesome
+    | Octicon
+    | Ionicon
+    | Foundation
+    | Evilicon
+    | SimpleLineIcon
+    | Feather
+    | Entypo;
+  let getType = t =>
+    switch (t) {
+    | MaterialCommunity => "material-community"
+    | Zocial => "zocial"
+    | FontAwesome => "font-awesome"
+    | Octicon => "octicon"
+    | Ionicon => "ionicon"
+    | Foundation => "foundation"
+    | Evilicon => "evilicon"
+    | SimpleLineIcon => "simple-line-icon"
+    | Feather => "feather"
+    | Entypo => "entypo"
+    };
+  let typeOptionMap = x =>
+    switch (x) {
+    | None => getType(Ionicon)
+    | Some(x) => getType(x)
+    };
+  [@bs.module "react-native-elements"]
+  external className : ReasonReact.reactClass = "Icon";
+  let make =
+      (
+        ~name: string,
+        ~containerStyle: option(BsReactNative.Style.t)=?,
+        ~component: option(ReasonReact.reactClass)=?,
+        ~onPress: option(unit => unit)=?,
+        ~color: option(string)=?,
+        ~iconStyle: option(BsReactNative.Style.t)=?,
+        ~onLongPress: option(unit => unit)=?,
+        ~raised: option(bool)=?,
+        ~reverse: option(string)=?,
+        ~size: option(int)=?,
+        ~type_: option(typeOptions)=?,
+        ~underlayColor: option(string)=?,
+        ~reverseColor: option(string)=?,
+        children,
+      ) =>
+    ReasonReact.wrapJsForReason(
+      ~reactClass=className,
+      ~props={
+        "name": name,
+        "type": typeOptionMap(type_),
+        "size": Js.Nullable.fromOption(size),
+        "raised": Js.Nullable.fromOption(raised),
+        "onPress": Js.Nullable.fromOption(onPress),
+        "color": Js.Nullable.fromOption(color),
+        "containerStyle": Js.Nullable.fromOption(containerStyle),
+        "component": Js.Nullable.fromOption(component),
+        "iconStyle": Js.Nullable.fromOption(iconStyle),
+        "onLongPress": Js.Nullable.fromOption(onLongPress),
+        "reverse": Js.Nullable.fromOption(reverse),
+        "reverseColor": Js.Nullable.fromOption(reverseColor),
+        "underlayColor": Js.Nullable.fromOption(underlayColor),
+      },
+      children,
+    );
+};
